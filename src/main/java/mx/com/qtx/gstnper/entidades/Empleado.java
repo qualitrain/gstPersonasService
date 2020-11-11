@@ -1,4 +1,4 @@
-package mx.com.qtx.entidades;
+package mx.com.qtx.gstnper.entidades;
 
 public class Empleado {
 	private int numEmpleado;

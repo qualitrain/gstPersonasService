@@ -1,8 +1,8 @@
-package mx.com.qtx.web;
+package mx.com.qtx.gstnper.web;
 
 import java.util.List;
 
-import mx.com.qtx.entidades.UnidadOrganizacional;
+import mx.com.qtx.gstnper.entidades.UnidadOrganizacional;
 
 public interface IGestorOrganizacion {
 	List<UnidadOrganizacional> getAreas();		

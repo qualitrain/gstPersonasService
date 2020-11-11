@@ -1,4 +1,4 @@
-package mx.com.qtx.negocio;
+package mx.com.qtx.gstnper.negocio;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import mx.com.qtx.entidades.Empleado;
+import mx.com.qtx.gstnper.entidades.Empleado;
 
 @Service
 public class GestorEmpleados {
@@ -29,6 +29,15 @@ public class GestorEmpleados {
 		empleados.put(emp.getNumEmpleado(), emp);
 		
 		emp = new Empleado(1667,"Juan Carlos","Herrera","Luna","22-34-71-77-19","jcherrera@laempresa.com.mx","DOPER","Director");
+		empleados.put(emp.getNumEmpleado(), emp);
+		
+		emp = new Empleado(501,"José Miguel","Torres","Aragón","55-11-34-11-22","jmtorres@laempresa.com","DOPER","Coordinado de Area");
+		empleados.put(emp.getNumEmpleado(), emp);
+		
+		emp = new Empleado(3421,"Mariana","Valdés","Forlán","77-12-33-91-45","mvaldes@laempresa.com","DOPER","Analista Sr");
+		empleados.put(emp.getNumEmpleado(), emp);
+		
+		emp = new Empleado(552,"Juan Manuel","Tinoco","Morales","33-19-99-01-03","jmtinoco@laempresa.com","DOPER","Consultor");
 		empleados.put(emp.getNumEmpleado(), emp);
 		
 		return empleados;

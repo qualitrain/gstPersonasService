@@ -1,4 +1,4 @@
-package mx.com.qtx.web;
+package mx.com.qtx.gstnper.web;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mx.com.qtx.entidades.UnidadOrganizacional;
+import mx.com.qtx.gstnper.entidades.UnidadOrganizacional;
 
 @RestController
 public class ApiAreasController {

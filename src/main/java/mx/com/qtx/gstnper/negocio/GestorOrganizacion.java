@@ -1,4 +1,4 @@
-package mx.com.qtx.negocio;
+package mx.com.qtx.gstnper.negocio;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import mx.com.qtx.entidades.UnidadOrganizacional;
-import mx.com.qtx.web.IGestorOrganizacion;
+import mx.com.qtx.gstnper.entidades.UnidadOrganizacional;
+import mx.com.qtx.gstnper.web.IGestorOrganizacion;
 
 @Service
 public class GestorOrganizacion implements IGestorOrganizacion{
