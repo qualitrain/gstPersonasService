@@ -2,10 +2,24 @@ package mx.com.qtx.gstnper.entidades;
 
 import java.util.Date;
 
+import javax.json.bind.annotation.JsonbDateFormat;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class EventoAgendado {
 	private int id;
 	private int numEmpleado;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm z")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm z" )
+	@JsonbDateFormat("yyyy-MM-dd HH:mm z")
 	private Date inicioProg;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm z")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm z" )
+	@JsonbDateFormat("yyyy-MM-dd HH:mm z")
 	private Date finProg;
 	private int tipo;
 	private int estado;

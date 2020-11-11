@@ -21,11 +21,11 @@ public class ApiEmpleados {
 	public List<Empleado> getEmpleados(){
 		return gestorEmpleados.getEmpleados();
 	}
-	@GetMapping(path="/empleados/{numEmpleado}/eventos")
+	@GetMapping(path="/empleados/{numEmpleado}/eventos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<EventoAgendado> getEventosAgendadosEmpleado(@PathVariable int numEmpleado){
-		return this.gestorEmpleados.getEventos(numEmpleado);
+		return this.gestorEmpleados.getEventosEmpleado(numEmpleado);
 	}
-	@GetMapping(path="/empleados/{numEmpleado}")
+	@GetMapping(path="/empleados/{numEmpleado}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Empleado getEmpleado(@PathVariable int numEmpleado) {
 		return this.gestorEmpleados.getEmpleado(numEmpleado);
 	}

@@ -63,7 +63,7 @@ public class GestorEmpleados implements IGestorEmpleados {
 	public List<Empleado> getEmpleados(){
 		return new ArrayList<>( mapEmpleados.values() );
 	}
-	public List<EventoAgendado> getEventos(int numEmpleado){
+	public List<EventoAgendado> getEventosEmpleado(int numEmpleado){
 		return mapEventosAgendados
 				                .values()
 		                        .stream()
@@ -75,6 +75,8 @@ public class GestorEmpleados implements IGestorEmpleados {
 		return mapEmpleados.get(numEmpleado);
 	}
 	public void agregarEventoAgendado(EventoAgendado evtI) {
+		int id = (int) (Math.random() * 10000);
+		evtI.setId(id);
 		mapEventosAgendados.put(evtI.getId(), evtI);
 	}
 }

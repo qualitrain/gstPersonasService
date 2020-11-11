@@ -8,5 +8,6 @@ import mx.com.qtx.gstnper.entidades.EventoAgendado;
 public interface IGestorEmpleados {
 	List<Empleado> getEmpleados();
 	Empleado getEmpleado(int numEmpleado);
-	List<EventoAgendado> getEventos(int numEmpleado);
+	List<EventoAgendado> getEventosEmpleado(int numEmpleado);
+	void agregarEventoAgendado(EventoAgendado evtI);
 }

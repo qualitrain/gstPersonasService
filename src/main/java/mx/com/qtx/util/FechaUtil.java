@@ -42,6 +42,11 @@ public class FechaUtil {
 				                         gc.get(GregorianCalendar.DAY_OF_MONTH));
 		return ldFecha;
 	}
+	public static Date agregarMinutosAFecha(Date fecha, int minutos) {
+		long milisFecha = fecha.getTime();
+		long milisMin = 1000 * 60 * minutos;
+		return new Date(milisFecha + milisMin);
+	}
 	// Para test local
 	public static void main(String args[]) {
 		Date fecNac = getFecha(1935,1,21);
