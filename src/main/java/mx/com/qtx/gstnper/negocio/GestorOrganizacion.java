@@ -6,8 +6,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import mx.com.qtx.IGestorOrganizacion;
 import mx.com.qtx.gstnper.entidades.UnidadOrganizacional;
-import mx.com.qtx.gstnper.web.IGestorOrganizacion;
 
 @Service
 public class GestorOrganizacion implements IGestorOrganizacion{

@@ -1,4 +1,4 @@
-package mx.com.qtx.gstnper.web;
+package mx.com.qtx;
 
 import java.util.List;
 

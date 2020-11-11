@@ -9,6 +9,17 @@ public class EventoAgendado {
 	private Date finProg;
 	private int tipo;
 	private int estado;
+	
+	public EventoAgendado(int id, int numEmpleado, Date inicioProg, Date finProg, int tipo, int estado) {
+		super();
+		this.id = id;
+		this.numEmpleado = numEmpleado;
+		this.inicioProg = inicioProg;
+		this.finProg = finProg;
+		this.tipo = tipo;
+		this.estado = estado;
+	}
+	
 	public EventoAgendado() {
 		super();
 	}

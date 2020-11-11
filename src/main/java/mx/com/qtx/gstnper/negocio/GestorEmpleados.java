@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import mx.com.qtx.IGestorEmpleados;
 import mx.com.qtx.gstnper.entidades.Empleado;
+import mx.com.qtx.gstnper.entidades.EventoAgendado;
+import mx.com.qtx.util.FechaUtil;
 
 @Service
-public class GestorEmpleados {
+public class GestorEmpleados implements IGestorEmpleados {
 	private static Map<Integer,Empleado> mapEmpleados = obtenerEmpleados();
+	private static Map<Integer,EventoAgendado> mapEventosAgendados = obtenerEventosDummy();
 
 	private static Map<Integer, Empleado> obtenerEmpleados() {
 		Map<Integer,Empleado> empleados = new HashMap<>();
@@ -43,9 +48,33 @@ public class GestorEmpleados {
 		return empleados;
 	}
 	
+	private static Map<Integer, EventoAgendado> obtenerEventosDummy() {
+		Map<Integer, EventoAgendado> eventos = new HashMap<>();
+		
+		EventoAgendado evtI = new EventoAgendado(1,2000, FechaUtil.getFecha(2020, 11, 17, 11, 15),FechaUtil.getFecha(2020, 11, 17, 12, 15),5,1);
+		eventos.put(evtI.getId(), evtI);
+		
+		evtI = new EventoAgendado(2,2000, FechaUtil.getFecha(2020, 12, 18, 0, 0),FechaUtil.getFecha(2021, 1, 2, 0, 0),2,1);
+		eventos.put(evtI.getId(), evtI);
+		
+		return eventos;
+	}
+
 	public List<Empleado> getEmpleados(){
 		return new ArrayList<>( mapEmpleados.values() );
 	}
-	
-	
+	public List<EventoAgendado> getEventos(int numEmpleado){
+		return mapEventosAgendados
+				                .values()
+		                        .stream()
+		                        .filter(evt->(evt.getNumEmpleado() == numEmpleado) )
+		                        .sorted( (o1,o2)-> (o1.getInicioProg().getTime() < o2.getInicioProg().getTime() ) ? -1 : 1 )
+		                        .collect(Collectors.toList());
+	}
+	public Empleado getEmpleado(int numEmpleado) {
+		return mapEmpleados.get(numEmpleado);
+	}
+	public void agregarEventoAgendado(EventoAgendado evtI) {
+		mapEventosAgendados.put(evtI.getId(), evtI);
+	}
 }

@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import mx.com.qtx.IGestorOrganizacion;
 import mx.com.qtx.gstnper.entidades.UnidadOrganizacional;
 
 @RestController
